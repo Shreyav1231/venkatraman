@@ -1,3 +1,12 @@
+:root {
+  --color-bg: #1a1a2e;
+  --color-text: #c8c8c8;
+  --color-pink: #f200ff;
+  --color-error: #ff5555;
+  --color-blue: #8be9fd;
+  --color-prompt: #50fa7b;
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -6,19 +15,89 @@
 
 html, body, #root {
   height: 100%;
-  background: #0d0d0d;
   overflow: hidden;
+  background: var(--color-bg);
+}
+
+/* ── Desktop ── */
+.desktop {
+  position: fixed;
+  inset: 0;
+  background: var(--color-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Mac window chrome ── */
+.mac-window {
+  width: min(860px, 92vw);
+  height: min(560px, 82vh);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.08),
+    0 30px 60px rgba(0,0,0,0.7);
+}
+
+.mac-titlebar {
+  height: 36px;
+  background: #2d2d2d;
+  border-bottom: 1px solid #1a1a1a;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  flex-shrink: 0;
+  position: relative;
+  user-select: none;
+}
+
+.traffic-lights {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.light {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.light-red    { background: #ff5f57; }
+.light-yellow { background: #ffbd2e; }
+.light-green  { background: #28c840; }
+
+.window-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #888;
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
 }
 
 .terminal {
   font-family: 'Courier New', Courier, monospace;
   font-size: 14px;
-  background: #271a2a00;
-  min-height: 100vh;
+  background: var(--color-bg);
+  flex: 1;
+  min-height: 0;
   padding: 1.5rem;
   overflow-y: auto;
-  max-height: 100vh;
   cursor: text;
+}
+
+.banner {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 13px;
+  color: var(--color-pink);
+  white-space: pre;
+  overflow-x: hidden;
+  margin-bottom: 1rem;
+  line-height: 1.4;
 }
 
 .prompt-line {
@@ -29,7 +108,7 @@ html, body, #root {
 }
 
 .prompt-label {
-  color: #ffffff;
+  color: var(--color-prompt);
   white-space: nowrap;
   user-select: none;
   font-weight: bold;
@@ -37,7 +116,7 @@ html, body, #root {
 }
 
 .prompt-input {
-  color: #f8f8f2;
+  color: var(--color-text);
   font-size: 18px;
 }
 
@@ -50,7 +129,7 @@ html, body, #root {
 }
 
 .terminal-input-display {
-  color: #f8f8f2;
+  color: var(--color-text);
   font-family: inherit;
   font-size: 18px;
   margin-left: 0.4ch;
@@ -119,8 +198,8 @@ html, body, #root {
 }
 
 .modal {
-  background: #1a1a2e;
-  border: 1px solid #50fa7b;
+  background: var(--color-bg);
+  border: 1px solid var(--color-pink);
   border-radius: 8px;
   padding: 2rem;
   width: min(860px, 90vw);
@@ -144,19 +223,19 @@ html, body, #root {
 }
 
 .modal-close:hover {
-  color: #ff5555;
+  color: var(--color-error);
 }
 
 .modal-title {
-  color: #50fa7b;
+  color: var(--color-blue);
   font-size: 1rem;
-  font-weight: normal;
+  font-weight: bold;
   margin-bottom: 1.5rem;
   letter-spacing: 0.05em;
 }
 
 .modal-body {
-  color: #c8c8c8;
+  color: var(--color-text);
   line-height: 1.7;
 }
 
@@ -174,22 +253,22 @@ html, body, #root {
   border: 1px solid #44475a;
   border-radius: 6px;
   padding: 1rem;
-  background: #0d0d0d;
+  background: var(--color-bg);
   transition: border-color 0.15s;
 }
 
 .modal-card:hover {
-  border-color: #50fa7b;
+  border-color: var(--color-blue);
 }
 
 .modal-card-title {
-  color: #8be9fd;
+  color: var(--color-blue);
   margin-bottom: 0.4rem;
   font-size: 0.95rem;
 }
 
 .modal-card-desc {
-  color: #6272a4;
+  color: var(--color-text);
   font-size: 0.85rem;
 }
 

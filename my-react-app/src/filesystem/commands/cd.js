@@ -2,7 +2,6 @@ import { getNode, resolvePath } from '../resolver.js'
 
 export default function cd(args, cwd, tree) {
   if (!args[0]) {
-    // "cd" with no args goes home, like real bash
     return { output: null, newCwd: '/', view: null, items: null, error: false }
   }
 

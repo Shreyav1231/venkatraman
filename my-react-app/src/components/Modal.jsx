@@ -1,12 +1,14 @@
 import { useEffect } from 'react'
 
+// content to display in modals for different sections upon "open"
+
 const SECTIONS = {
   about: {
     title: 'about',
     content: (
       <div className="modal-about">
-        <p>Hi, I'm Shreya.</p>
-        <p>Senior studying Computer Science at Purdue University.</p>
+        <p>Hi! I'm Shreya.</p>
+        <p>I am a senior studying Computer Science at Purdue University.</p>
         <p>I specialize in security and systems.</p>
       </div>
     ),
@@ -32,8 +34,9 @@ const SECTIONS = {
     title: 'contact',
     content: (
       <div className="modal-about">
-        <p>Email: shreyav1231@gmail.com</p>
-        <p>GitHub: github.com/shreyavenkatraman</p>
+        <p>Please feel free to say hi if you see me on the street or digitally via -</p>
+        <p>Email: shreyavenkat31@duck.com</p>
+        <p>GitHub: github.com/Shreyav1231</p>
       </div>
     ),
   },

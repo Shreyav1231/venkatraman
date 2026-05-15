@@ -27,6 +27,10 @@ export default function Terminal() {
   return (
     <>
       <div className="terminal" onClick={focusInput}>
+        <pre className="banner">{`░█▀▀░█░█░█▀█░█▀▀░█░█░░░█░█░█▀▀░█░░░█▀▀░█▀█░█▄█░█▀▀░█▀▀░░░█░█░█▀█░█░█░█
+░▀▀█░▀▄▀░█▀█░▀▀█░█▀█░░░█▄█░█▀▀░█░░░█░░░█░█░█░█░█▀▀░▀▀█░░░░█░░█░█░█░█░▀
+░▀▀▀░░▀░░▀░▀░▀▀▀░▀░▀░░░▀░▀░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀▀▀░░░░▀░░▀▀▀░▀▀▀░▀`}</pre>
+        <h1 className="banner">type help to get started</h1>
         {history.map((entry, i) => (
           <div key={i}>
             <div className="prompt-line">
@@ -38,7 +42,7 @@ export default function Terminal() {
             }
           </div>
         ))}
-
+        
         <div className="prompt-line">
           <Prompt cwd={cwd} />
           {/* Hidden input captures keystrokes */}

@@ -2,11 +2,11 @@
   background: #0d0d0d;
   color: #e0e0e0;
   font-family: 'JetBrains Mono', 'Fira Code', monospace;
-  font-size: 14px;
+  font-size: 18px;
   height: 100vh;
   overflow-y: auto;
   padding: 1rem;
-  cursor: text;            /* looks like a text cursor everywhere */
+  cursor: text;
 }
 
 .terminal-input {
@@ -16,9 +16,9 @@
   color: inherit;
   font: inherit;
   caret-color: #e0e0e0;
-  width: 60%;             /* wide enough to type without overflow */
+  width: 60%;
 }
 
 .prompt-label {
-  color: #4ec9b0;         /* teal, like VS Code terminal */
+  color: #4ec9b0;  
 }

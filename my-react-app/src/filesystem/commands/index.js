@@ -7,6 +7,7 @@ import open from './open.js'
 const commands = { ls, cd, cat, pwd, open }
 
 export function runCommand(input, cwd, tree) {
+  // split input into command and args
   const [cmd, ...args] = input.trim().split(/\s+/)
 
   if (!cmd) return { output: null }   // empty enter, do nothing
@@ -17,7 +18,7 @@ export function runCommand(input, cwd, tree) {
   }
 
   if (cmd === 'help') {
-    return { output: 'available commands: ls, cd, pwd, cat, open, clear' }
+    return { output: 'available commands:\nls (to list all available items)\ncd (to change directory)\npwd (to print working directory)\ncat (to display file contents)\nopen (to open a file)\nclear (to clear the terminal)' }
   }
 
   const fn = commands[cmd]

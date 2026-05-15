@@ -1,7 +1,9 @@
 export default function Prompt({ cwd, input }) {
   return (
     <>
-      <span className="prompt-label">svash{cwd} $</span>
+      <span className="prompt-label">
+        savsh
+        {cwd} $</span>
       {input != null && <span className="prompt-input">&nbsp;{input}</span>}
     </>
   )
