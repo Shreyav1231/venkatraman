@@ -1,25 +1,66 @@
-import { Suspense } from 'react'
-import { Canvas, useLoader } from '@react-three/fiber'
-import { OrbitControls, Html, ContactShadows, Bounds } from '@react-three/drei'
+import { Suspense, useEffect } from 'react'
+import { Canvas, useLoader, useThree } from '@react-three/fiber'
+import { OrbitControls, Html, ContactShadows } from '@react-three/drei'
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader.js'
 import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader.js'
+import * as THREE from 'three'
+
+const MONITOR_OBJECT = 'Cube'
 
 function DesktopModel({ onOpen }) {
-  const materials = useLoader(MTLLoader, '/Desktop.mtl')
-  const obj = useLoader(OBJLoader, '/Desktop.obj', (loader) => {
+  const materials = useLoader(MTLLoader, '/desktop_with_resume.mtl')
+  const obj = useLoader(OBJLoader, '/desktop_with_resume.obj', (loader) => {
     materials.preload()
     loader.setMaterials(materials)
   })
+
+  const getClickedName = (e) => e.object.name || e.object.parent?.name || ''
+
+  const handleClick = (e) => {
+    e.stopPropagation()
+    if (getClickedName(e) === MONITOR_OBJECT) onOpen()
+  }
+
+  const handlePointerOver = (e) => {
+    if (getClickedName(e) === MONITOR_OBJECT) document.body.style.cursor = 'pointer'
+  }
+
+  const handlePointerOut = () => { document.body.style.cursor = 'default' }
 
   return (
     <primitive
       object={obj}
       rotation={[0, Math.PI, 0]}
-      onClick={onOpen}
-      onPointerOver={() => { document.body.style.cursor = 'pointer' }}
-      onPointerOut={() => { document.body.style.cursor = 'default' }}
+      onClick={handleClick}
+      onPointerOver={handlePointerOver}
+      onPointerOut={handlePointerOut}
     />
   )
+}
+
+// Computes the scene bounding box and positions the camera from a front-right
+// angle at desk level so the table surface (and resume) are clearly visible.
+function AutoCamera() {
+  const { camera, scene } = useThree()
+
+  useEffect(() => {
+    // Wait one frame so the model is in the scene graph
+    const id = requestAnimationFrame(() => {
+      const box = new THREE.Box3().setFromObject(scene)
+      const center = box.getCenter(new THREE.Vector3())
+      const size   = box.getSize(new THREE.Vector3())
+      const maxDim = Math.max(size.x, size.y, size.z)
+
+      // Position camera front-right at ~desk-top height, looking at the center
+      const dist = maxDim * 1.4
+      camera.position.set(center.x + dist * 0.4, center.y + dist * 0.15, center.z + dist)
+      camera.lookAt(center)
+      camera.updateProjectionMatrix()
+    })
+    return () => cancelAnimationFrame(id)
+  }, [camera, scene])
+
+  return null
 }
 
 function Loader() {
@@ -35,7 +76,7 @@ function Loader() {
 export default function Scene({ onOpen }) {
   return (
     <Canvas
-      camera={{ position: [0, 1, 5], fov: 50 }}
+      camera={{ position: [0, 2, 10], fov: 50 }}
       style={{ position: 'fixed', inset: 0 }}
     >
       <ambientLight intensity={0.25} />
@@ -44,9 +85,8 @@ export default function Scene({ onOpen }) {
       <directionalLight position={[0, 4, -8]}  intensity={0.35} />
 
       <Suspense fallback={<Loader />}>
-        <Bounds fit clip observe margin={1.2}>
-          <DesktopModel onOpen={onOpen} />
-        </Bounds>
+        <DesktopModel onOpen={onOpen} />
+        <AutoCamera />
         <ContactShadows
           position={[0, -2, 0]}
           opacity={0.5}
@@ -59,9 +99,9 @@ export default function Scene({ onOpen }) {
         makeDefault
         enablePan={false}
         minPolarAngle={Math.PI / 6}
-        maxPolarAngle={Math.PI / 2}
+        maxPolarAngle={Math.PI * 0.85}
         minDistance={1}
-        maxDistance={20}
+        maxDistance={50}
       />
     </Canvas>
   )

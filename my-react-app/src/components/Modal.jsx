@@ -1,6 +1,41 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
+import projects from '../content/projectsData.json'
 
-// content to display in modals for different sections upon "open"
+function ProjectsGrid() {
+  const [selected, setSelected] = useState(null)
+
+  if (selected) {
+    return (
+      <div className="modal-project-detail">
+        <button className="modal-back" onClick={() => setSelected(null)}>← back</button>
+        <h3 className="modal-project-title">{selected.title}</h3>
+
+        <div className="modal-project-images">
+          {selected.images.map((src, i) => (
+            <img key={i} src={src} alt={`${selected.title} screenshot ${i + 1}`} className="modal-project-img" />
+          ))}
+        </div>
+
+        <div className="modal-project-story">
+          {selected.story.map((para, i) => (
+            <p key={i}>{para}</p>
+          ))}
+        </div>
+      </div>
+    )
+  }
+
+  return (
+    <div className="modal-grid">
+      {projects.map(p => (
+        <div key={p.id} className="modal-card" onClick={() => setSelected(p)}>
+          <div className="modal-card-title">{p.title}</div>
+          <div className="modal-card-desc">{p.description}</div>
+        </div>
+      ))}
+    </div>
+  )
+}
 
 const SECTIONS = {
   about: {
@@ -15,26 +50,13 @@ const SECTIONS = {
   },
   projects: {
     title: 'projects',
-    content: (
-      <div className="modal-grid">
-        {[
-          { name: 'Project A', desc: 'Coming soon' },
-          { name: 'Project B', desc: 'Coming soon' },
-          { name: 'Project C', desc: 'Coming soon' },
-        ].map(p => (
-          <div key={p.name} className="modal-card">
-            <div className="modal-card-title">{p.name}</div>
-            <div className="modal-card-desc">{p.desc}</div>
-          </div>
-        ))}
-      </div>
-    ),
+    content: <ProjectsGrid />,
   },
   contact: {
     title: 'contact',
     content: (
       <div className="modal-about">
-        <p>Please feel free to say hi if you see me on the street or digitally via -</p>
+        <p>Please feel free to say hi if you see me on the street or digitally via —</p>
         <p>Email: shreyavenkat31@duck.com</p>
         <p>GitHub: github.com/Shreyav1231</p>
       </div>

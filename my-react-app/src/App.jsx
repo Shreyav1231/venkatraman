@@ -7,6 +7,10 @@ export default function App() {
 
   return (
     <div className="app-root">
+      <div className="welcome-banner">
+        <h1>Take a sneak peek into my life!</h1>
+        <p>As a kid, I was known for my inquisitiveness - opening random drawers, playing with random objects, and asking endless questions. As an adult, I harness that inquisitiveness to explore new ideas and push the boundaries of what I think is possible. Today, I invite you to poke around on my website. Hope you enjoy!</p>
+      </div>
       <Scene onOpen={() => setShowTerminal(true)} />
 
       {showTerminal && (
