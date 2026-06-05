@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import projects from '../content/projectsData.json'
+import projects from '../content/projects.json'
 
 function ProjectsGrid() {
   const [selected, setSelected] = useState(null)
@@ -9,6 +9,12 @@ function ProjectsGrid() {
       <div className="modal-project-detail">
         <button className="modal-back" onClick={() => setSelected(null)}>← back</button>
         <h3 className="modal-project-title">{selected.title}</h3>
+
+        <div className="modal-project-links">
+          <a href={selected.github} target="_blank" rel="noopener noreferrer">
+            View on GitHub
+          </a>
+        </div>
 
         <div className="modal-project-images">
           {selected.images.map((src, i) => (
@@ -51,16 +57,6 @@ const SECTIONS = {
   projects: {
     title: 'projects',
     content: <ProjectsGrid />,
-  },
-  contact: {
-    title: 'contact',
-    content: (
-      <div className="modal-about">
-        <p>Please feel free to say hi if you see me on the street or digitally via —</p>
-        <p>Email: shreyavenkat31@duck.com</p>
-        <p>GitHub: github.com/Shreyav1231</p>
-      </div>
-    ),
   },
 }
 

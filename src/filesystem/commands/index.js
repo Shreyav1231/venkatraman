@@ -1,10 +1,9 @@
 import ls   from './ls.js'
 import cd   from './cd.js'
-import cat  from './cat.js'
 import pwd  from './pwd.js'
 import open from './open.js'
 
-const commands = { ls, cd, cat, pwd, open }
+const commands = { ls, cd, pwd, open }
 
 export function runCommand(input, cwd, tree) {
   // split input into command and args
@@ -18,7 +17,7 @@ export function runCommand(input, cwd, tree) {
   }
 
   if (cmd === 'help') {
-    return { output: 'available commands:\nls (to list all available items)\ncd (to change directory)\npwd (to print working directory)\ncat (to display file contents)\nopen (to open a file)\nclear (to clear the terminal)' }
+    return { output: 'available commands:\nls (to list all available items)\ncd (to change directory)\npwd (to print working directory)\nopen (to open a file)\nclear (to clear the terminal)' }
   }
 
   const fn = commands[cmd]

@@ -21,5 +21,6 @@ export default function ls(args, cwd, tree) {
     })
     .join('    ')
 
-  return { output, newCwd: null, view: null, items: null, error: false }
+  const hint = cwd === '/' ? "\ntype 'open <dir>' to view" : ''
+  return { output: output + hint, newCwd: null, view: null, items: null, error: false }
 }

@@ -1,6 +1,44 @@
-{
-  "type": "dir",
-  "visual": true,
-  "description": "Things I've built",
-  "children": ["Boiler Maps", "barbielang", "Grade-Saver"]
-}
+[
+  {
+    "id": "project-one",
+    "title": "Boiler Maps",
+    "description": "Indoor navigation app for Purdue buildings",
+    "github": "https://github.com/Shreyav1231/Boiler-Maps",
+    "images": [
+      "/public/project-images/boiler-maps-logo.jpg"
+    ],
+    "story": [
+      "During the Spring semester of 2026, my talented friend group took a class called CS307 - Software Engineering in the hopes of creating a project together. The class was structured such that we had to use agile methodologies to build a meaningful software project. We also had to present it at the end of the semester.",
+      "After multiple ideation sessions, we settled on creating an indoor navigation system for Purdue University. Indoor navigation is a notoriously difficult problem, and we were determined to solve it. The team experimented with a variety of technologies, including magnetic fingerprinting, BLE beacons, and Wi-Fi triangulation. We ultimately settled on an approach that combined pedometer readings for navigation and magnetic fingerprinting for location caliberation.",
+      "This project was not only challenging because of the technical complexities, but also because of the amount of manual work involved. There would be nights of testing where we would have to walk up and down buildings for us to caliberate stride length, and figure out how to fine-tune the accuracy of our system. Drawing out floorplans, marking magnetic fingerprints, and testing the app in different buildings was a lot of work, but was the most rewarding part of the project as those aspects are what made it stand out. We ended up with a working prototype for indoor navigation inone building, and a functioning outdoor to indoor navigation transition.",
+      "As this project was divided into 3 sprints, each 3 weeks long, we were able to make significant progress towards our functional and non-functional goals. Some other highlights include - interactive tutorial upon launching the app, an internal application to help us with node creation for path displays, and a custom-built step counter that was more accurate than the phone's built-in pedometer.",
+      "My wonderful teammates - Daniel, Gabe, Neha, Tory, and I (Shreya) won't stop here! In the future, we wish to make all our components in-house, instead of using the Google Maps API so that we have free reign over indoor map designs and capabilities. We also want to explore using machine learning models to help us select the best navigation approach as mentioned for different situations."
+    ]
+  },
+  {
+    "id": "project-two",
+    "title": "Project Two",
+    "description": "A brief one-liner about what this project does.",
+    "images": [
+      "/projects/project-two-1.png",
+      "/projects/project-two-2.png"
+    ],
+    "story": [
+      "First paragraph — what the project is and why you built it.",
+      "Second paragraph — interesting technical challenges or decisions."
+    ]
+  },
+  {
+    "id": "project-three",
+    "title": "Project Three",
+    "description": "A brief one-liner about what this project does.",
+    "images": [
+      "/projects/project-three-1.png",
+      "/projects/project-three-2.png"
+    ],
+    "story": [
+      "First paragraph — what the project is and why you built it.",
+      "Second paragraph — interesting technical challenges or decisions."
+    ]
+  }
+]

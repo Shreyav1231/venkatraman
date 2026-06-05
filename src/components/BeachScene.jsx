@@ -6,8 +6,8 @@ import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader.js'
 import * as THREE from 'three'
 
 function BeachModel() {
-  const materials = useLoader(MTLLoader, '/BeachTutorial.mtl')
-  const obj = useLoader(OBJLoader, '/BeachTutorial.obj', (loader) => {
+  const materials = useLoader(MTLLoader, '/3d-models/BeachTutorial.mtl')
+  const obj = useLoader(OBJLoader, '/3d-models/BeachTutorial.obj', (loader) => {
     materials.preload()
     loader.setMaterials(materials)
   })

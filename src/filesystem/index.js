@@ -1,13 +1,11 @@
-import root    from '../content/root.json'
-import about   from '../content/about.json'
-import projects from '../content/projects.json'
-import contact  from '../content/contact.json'
+import root    from './nodes/root.json'
+import about   from './nodes/about.json'
+import projects from './nodes/projects.json'
 
 const tree = {
   '/':         root,
   '/about':    about,
   '/projects': projects,
-  '/contact':  contact,
 }
 
 export default tree

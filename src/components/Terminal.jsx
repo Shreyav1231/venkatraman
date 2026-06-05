@@ -65,7 +65,15 @@ export default function Terminal() {
         <div ref={bottomRef} />
       </div>
 
-      {modal && <Modal section={modal.section} onClose={closeModal} />}
+      {modal && (
+        <Modal
+          section={modal.section}
+          onClose={() => {
+            closeModal()
+            setTimeout(() => inputRef.current?.focus(), 0)
+          }}
+        />
+      )}
     </>
   )
 }

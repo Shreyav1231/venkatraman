@@ -26,11 +26,11 @@ html, body, #root {
   color: var(--color-pink);
   position: fixed;
   font-family: 'Space Mono', monospace;
-  font-size: 12px;
+  font-size: 14px;
   inset: 0;
   display: flex;
   flex-direction: column;
-  padding: 2rem;
+  padding: 3rem;
   align-items: center;
 }
 
@@ -374,7 +374,7 @@ html, body, #root {
 
 .modal-project-images {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 0.75rem;
   margin-bottom: 1.5rem;
 }
@@ -384,12 +384,23 @@ html, body, #root {
   border-radius: 4px;
   border: 1px solid #44475a;
   object-fit: cover;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 12 / 9;
   background: #111;
+  margin: 2rem;
 }
 
 .modal-project-story p {
   color: var(--color-text);
   line-height: 1.75;
   margin-bottom: 0.9rem;
+}
+
+.modal-project-links a {
+  color: var(--color-pink);
+  font-family: inherit;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border: 1px solid var(--color-pink);
+  padding: 0.5rem;
+  margin: 20.4rem 0 0 0;
 }
