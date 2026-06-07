@@ -30,7 +30,7 @@ function ProjectsGrid() {
 
         <div className="modal-project-images">
           {selected.images.map((src, i) => (
-            <img key={i} src={src} alt={`${selected.title} screenshot ${i + 1}`} className="modal-project-img" />
+            <img key={i} src={`${import.meta.env.BASE_URL}${src}`} alt={`${selected.title} screenshot ${i + 1}`} className="modal-project-img" />
           ))}
         </div>
 

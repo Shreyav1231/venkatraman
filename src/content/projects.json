@@ -9,7 +9,7 @@
       ""
     ],
     "images": [
-      "/public/project-images/boiler-maps-logo.jpg"
+      "project-images/boiler-maps-logo.jpg"
     ],
     "story": [
       "During the Spring semester of 2026, my talented friend group took a class called CS307 - Software Engineering in the hopes of creating a project together. The class was structured such that we had to use agile methodologies to build a meaningful software project. We also had to present it at the end of the semester.",
@@ -29,7 +29,7 @@
       "https://devpost.com/software/barbielang"
     ],
     "images": [
-      "/public/project-images/barbielang.png"
+      "project-images/barbielang.png"
     ],
     "story": [
       "Spring 2026 was a semester of many fun projects! For the InnovateHER hackathon (of which I was also a part of the organizing team during its launch in 2024), my teammates and I created a block-based programming language for beginners. The idea stemmed from my longtime wish to create a programming language that was fun, eye-catching for beginners and had a cool theme. I began programming through Khan Academy's JavaScript course, and what I loved most about it was that nothing was dumbed down because I was a beginner, instead it was just made fun via visuals and interactivity. I envisioned a similar experience for barbielang.",

@@ -47,7 +47,7 @@ export default function App() {
           <BeachScene />
           <div className="resume-overlay">
             <div className="resume-scroll">
-              <img src="/assets/RESUME.png" alt="Shreya Venkatraman Resume" className="resume-img" />
+              <img src={`${import.meta.env.BASE_URL}assets/RESUME.png`} alt="Shreya Venkatraman Resume" className="resume-img" />
             </div>
           </div>
           <button className="beach-back" onClick={() => setView('desk')}>← back</button>

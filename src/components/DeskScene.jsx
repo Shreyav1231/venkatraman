@@ -10,8 +10,9 @@ const RESUME_OBJECT  = 'Resume_Paper'
 const CLICKABLE      = new Set([MONITOR_OBJECT, RESUME_OBJECT])
 
 function DesktopModel({ onOpen, onResumeOpen }) {
-  const materials = useLoader(MTLLoader, '/3d-models/desktop_with_resume.mtl')
-  const obj = useLoader(OBJLoader, '/3d-models/desktop_with_resume.obj', (loader) => {
+  const base = import.meta.env.BASE_URL
+  const materials = useLoader(MTLLoader, `${base}3d-models/desktop_with_resume.mtl`)
+  const obj = useLoader(OBJLoader, `${base}3d-models/desktop_with_resume.obj`, (loader) => {
     materials.preload()
     loader.setMaterials(materials)
   })
