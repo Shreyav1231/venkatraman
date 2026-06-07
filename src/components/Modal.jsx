@@ -11,9 +11,21 @@ function ProjectsGrid() {
         <h3 className="modal-project-title">{selected.title}</h3>
 
         <div className="modal-project-links">
-          <a href={selected.github} target="_blank" rel="noopener noreferrer">
-            View on GitHub
-          </a>
+          {selected.links?.[0] && (
+            <a href={selected.links[0]} target="_blank" rel="noopener noreferrer">
+              View on GitHub
+            </a>
+          )}
+          {selected.links?.[1] && (
+            <a href={selected.links[1]} target="_blank" rel="noopener noreferrer">
+              Try it out
+            </a>
+          )}
+          {selected.links?.[2] && (
+            <a href={selected.links[2]} target="_blank" rel="noopener noreferrer">
+              Devpost
+            </a>
+          )}
         </div>
 
         <div className="modal-project-images">

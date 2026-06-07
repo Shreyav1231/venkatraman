@@ -2,8 +2,12 @@
   {
     "id": "project-one",
     "title": "Boiler Maps",
-    "description": "Indoor navigation app for Purdue buildings",
-    "github": "https://github.com/Shreyav1231/Boiler-Maps",
+    "description": "Indoor navigation app for Purdue buildings.",
+    "links": [
+      "https://github.com/Shreyav1231/Boiler-Maps",
+      "",
+      ""
+    ],
     "images": [
       "/public/project-images/boiler-maps-logo.jpg"
     ],
@@ -17,24 +21,50 @@
   },
   {
     "id": "project-two",
-    "title": "Project Two",
-    "description": "A brief one-liner about what this project does.",
+    "title": "barbielang",
+    "description": "A simple block-based programming language for beginners.",
+    "links": [
+      "https://github.com/Shreyav1231/barbielang",
+      "https://kartva.github.io/barbie-lang/",
+      "https://devpost.com/software/barbielang"
+    ],
     "images": [
-      "/projects/project-two-1.png",
-      "/projects/project-two-2.png"
+      "/public/project-images/barbielang.png"
     ],
     "story": [
-      "First paragraph — what the project is and why you built it.",
-      "Second paragraph — interesting technical challenges or decisions."
+      "Spring 2026 was a semester of many fun projects! For the InnovateHER hackathon (of which I was also a part of the organizing team during its launch in 2024), my teammates and I created a block-based programming language for beginners. The idea stemmed from my longtime wish to create a programming language that was fun, eye-catching for beginners and had a cool theme. I began programming through Khan Academy's JavaScript course, and what I loved most about it was that nothing was dumbed down because I was a beginner, instead it was just made fun via visuals and interactivity. I envisioned a similar experience for barbielang.",
+      "barbielang blends familiar block-based programming paradigms with a fun, Barbie-inspired theme. The language is designed to be intuitive and engaging, making it an ideal choice for beginners or experts who want to enjoy a playful coding experience.",
+      "The development process involved using the somewhat old, but widely used Blockly library for the frontend. We customized the barebone environment to fit our Barbie theme, and added features like a block code to python translator, output section and glittering trashcan. I will say, I was very impressed with the UI/UX. Each design choice was intentional and well thought out by the creative experts of our team - Suhani and Pooja. Kartavya and I focused on the interpreter architecture. The lexer converts raw text into tokens. Then a parser builds an Abstract Syntax Tree (AST) from those tokens and uses operator precednce, expression parsing and statement parsing. The evaluator evaluates the AST and executes the code. My course knowledge from making a simple C compiler in my Computer Architeture class played a huge role in helping me form parallels and understand the basic design needed for our interpreter.",
+      "barbielang was an eye-catching project at the hackathon demos, and we were thrilled to win at the hackathon as well!",
+      "I envision barbielang inspiring young coders to explore programming in a fun and engaging way. In the future, I hope to create barbieworld, a place for barbielang coders to interact with each other, share their projects on a public gallery, and even have barbie coding competetions. I also proposed the idea of AI generating the UI for multiple different themes as per kids' interests, and I hope to explore that in the future as well!"
     ]
   },
   {
     "id": "project-three",
-    "title": "Project Three",
-    "description": "A brief one-liner about what this project does.",
+    "title": "C Shell",
+    "description": "Custom shell in C built for my Systems Programming class.",
+    "links": [
+      "",
+      "",
+      ""
+    ],
     "images": [
-      "/projects/project-three-1.png",
-      "/projects/project-three-2.png"
+      
+    ],
+    "story": [
+      "Systems Programming and Computer Security have been two of my most rewarding classes at Purdue, mainly because they both had incredibly involved projects, and I LOVE getting my hands dirty with projects. In the Spring of 2025, I took Systems Programming with Prof. Gustavo Rodriguez-Rivera, who sparked in me an interest for low-level programming. The class featured projects like building a shell, memory allocator, and creating an HTTP server.",
+      "For the Shell project, we were first tasked with tokenizing and parsing words using lex and yacc. This helped us create a basic command table. Then we had to execute the commands by creating a new process with fork() and calling the built-in library function execvp(). File and pipe redirection using dup2() was also part of the first milestone.",
+      "The second milestone involved adding support for signal handling (ctrl-c), builtin functions (cd, setenv, source), background processes, and subshells. The final milestone was to add support for environment variable expansion (${SHELL}, ${$}, ${!}, etc.), wildcards, command history, and tty controls", 
+      "The hardest part of this project was definitely subshells and tty controls. The shell project made way more sense once I became a teaching assistant for the class. Looking at others' implementations also made me appreciate the use of C++ to simplify some string manipulation and memory management aspects of the project."
+    ]
+  },
+  {
+    "id": "project-four",
+    "title": "Grade-Saver",
+    "description": "A web extension that helps students discover opportunities for regrade requests on Gradescope.",
+    "images": [
+      "/projects/project-four-1.png",
+      "/projects/project-four-2.png"
     ],
     "story": [
       "First paragraph — what the project is and why you built it.",
