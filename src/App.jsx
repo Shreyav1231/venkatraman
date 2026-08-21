@@ -19,7 +19,7 @@ export default function App() {
         <>
           <div className="welcome-banner">
             <h1>I am Shreya Venkatraman</h1>
-            <p className="welcome-text">As a kid, I was known for my inquisitiveness - opening random drawers, playing with objects, and asking questions endlessly. As an adult, I harness that inquisitiveness to explore new ideas and push the boundaries of what I think is possible. Today, I invite you to be inquisitive about my website. Poke around and see what you find!</p>
+            <p className="welcome-text">As a kid, I was known for my inquisitiveness - opening random drawers, playing pretend with objects, and asking questions endlessly. As an adult, I harness that inquisitiveness to explore new ideas and push the boundaries of what I think is possible. Today, I invite you to be inquisitive about my website. Poke around and see what you find!</p>
           </div>
           <DeskScene
             onOpen={() => setShowTerminal(true)}
@@ -51,6 +51,7 @@ export default function App() {
             <div className="socials-overlay" onClick={() => setShowSocials(false)}>
               <div className="socials-window" onClick={(e) => e.stopPropagation()}>
                 <button className="socials-close" onClick={() => setShowSocials(false)}>✕</button>
+                <p className="welcome-text">I'm about yeh tall with dark long hair and black eyes. If you spot me, say hi (or whatever you want!)</p>
                 <p className="socials-hint">click an icon to visit</p>
                 <SocialsScene />
               </div>

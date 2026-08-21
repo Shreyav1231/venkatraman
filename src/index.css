@@ -37,8 +37,10 @@ html, body, #root {
 .welcome-text {
   color: var(--color-text);
   font-family: 'Courier New', Courier, monospace;
-  font-size: 18px;
+  font-size: 1rem;
   margin-top: 1rem;
+  margin-left: 1.25em;
+  margin-right: 1.25rem;
   text-align: center;
   max-width: 800px;
 }
@@ -62,7 +64,7 @@ html, body, #root {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 10;
+  z-index: 60; /* bring resume above back button and other UI */
   pointer-events: none; /* beach stays interactive outside the scroll box */
 }
 
@@ -215,9 +217,13 @@ html, body, #root {
 .terminal-input-hidden {
   position: absolute;
   opacity: 0;
-  width: 0;
-  height: 0;
-  pointer-events: none;
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 1px;
+  border: none;
+  padding: 0;
+  margin: 0;
 }
 
 .terminal-input-display {
@@ -420,7 +426,6 @@ html, body, #root {
   margin: 20.4rem 0 0 0;
 }
 
-/* ── Socials 3D overlay ── */
 .socials-overlay {
   position: fixed;
   inset: 0;
@@ -474,3 +479,39 @@ html, body, #root {
   pointer-events: none;
   white-space: nowrap;
 }
+
+/* Better centering for the resume on small screens */
+@media (max-width: 480px) {
+  /* remove dark overlay on mobile and allow interaction */
+  .resume-overlay {
+    background: transparent;
+    pointer-events: auto;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-top: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  /* make resume fill the viewport and be vertically scrollable */
+  .resume-scroll {
+    width: 100%;
+    max-height: calc(100vh - 2.25rem);
+    height: auto;
+    margin: 0 auto;
+    border-radius: 4px;
+    box-shadow: none;
+    box-sizing: border-box;
+    padding: 0.25rem 0.25rem 0.75rem 0.25rem;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .resume-img {
+    width: 100%;
+    margin: 0;
+    display: block;
+    height: auto;
+  }
+}
+

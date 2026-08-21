@@ -59,6 +59,9 @@ export default function Terminal() {
             autoFocus
             spellCheck={false}
             autoComplete="off"
+            inputMode="text"
+            autoCapitalize="off"
+            autoCorrect="off"
           />
           {/* Visible display with block cursor */}
           <span className="terminal-input-display" onClick={focusInput}>

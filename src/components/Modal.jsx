@@ -8,6 +8,7 @@ function ProjectsGrid() {
 
   if (selected) {
     return (
+      // From the JSON file
       <div className="modal-project-detail">
         <button className="modal-back" onClick={() => setSelected(null)}>← back</button>
         <h3 className="modal-project-title">{selected.title}</h3>

@@ -5,6 +5,8 @@ import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader.js'
 import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader.js'
 import * as THREE from 'three'
 
+// The socials scene is a 3D model of the social media icons (I got the assets from the internet, I can't remember right now).
+
 const LINKEDIN_URL = 'https://www.linkedin.com/in/shreya-venkatraman'
 const GITHUB_URL   = 'https://github.com/Shreyav1231'
 

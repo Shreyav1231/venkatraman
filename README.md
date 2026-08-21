@@ -1,58 +1,14 @@
-# React + Vite
+# Tech Stack 
+- Framework: React
+- Bundler: Vite
+- 3D: threejs
+- Styling: CSS + Google Fonts (Cedarville Cursive, Space Mono) 
+- Build and Deploy: GitHub Actions workflow pushes the built `dist` to gh-pages branch, and GitHub pages is configured to serve from that branch
+- Package Manager: npm
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Setup for Local Development
+- ```npm ci```
+- ```npm run dev``` 
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-
-
-User types "cd projects" and hits Enter
-        │
-        ▼
-useShell.run("cd projects")
-        │
-        ▼
-commands/cd.js
-  → resolvePath("/", "projects")  →  "/projects"
-  → getNode("/projects")          →  { type: "dir", visual: true, children: [...] }
-  → returns { newCwd: "/projects", output: null, view: "grid", children: [...] }
-        │
-        ▼
-useShell updates cwd + appends to history
-        │
-        ▼
-Terminal.jsx re-renders
-  → sees view: "grid" in last history entry
-  → renders <GridView children={["portfolio", "cli-tool", ...]} />
-
-
-  User types "cd projects"
-    │
-    ▼
-useShell.run("cd projects")
-    │
-    ▼
-runCommand("cd projects", "/", tree)
-    │
-    ▼
-cd(["projects"], "/", tree)
-    │
-    ├── resolvePath("/", "projects")  →  "/projects"
-    ├── getNode("/projects", tree)    →  { type: "dir", visual: true, children: [...] }
-    └── returns { newCwd: "/projects", view: "grid", items: [...] }
-    │
-    ▼
-useShell updates cwd, appends to history
-    │
-    ▼
-Terminal.jsx sees view: "grid" → renders <GridView />
+# Background 
+The first ever programming language I learnt was JavaScript, followed by HTML and CSS in 10th grade. I spent the summer before coming to college obsessing over cool personal websites. I knew that whenever I made my personal website, it had to have 3D assets. Fortunately, over the summer of 2026, I was able to pick up a few Blender skills. I still have a lot to learn, as I would eventually like to design exactly what I imagine. But for now, I am very happy with the skills I gained. `src/components` has all the components that make up the website. Designing the terminal was my favorite part as I could apply concepts learnt in school to create a simpler, hard-coded version of the Purdue CS252 Shell Project. AI was very helpful with putting in JS what I could pseudo-code. I tried to make the code as organized and readable as possible (thanks folders and JSON xD), and am open to suggestions! 
