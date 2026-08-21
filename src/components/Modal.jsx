@@ -76,7 +76,7 @@ const SECTIONS = {
     title: 'hobbies',
     content: (
       <div className="modal-hobbies">
-        <h1>I love DOING.</h1>
+        <h1 className="modal-hobbies-title">I love doing... :)</h1>
         <p>My hobbies include, but are not limited to:</p>
         <ul>
           <li>MUSIC - creating and listening</li>

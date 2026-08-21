@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 :root {
   --color-bg: #1a1a2e;
   --color-text: #c8c8c8;
@@ -18,20 +20,33 @@ html, body, #root {
   height: 100%;
   overflow: hidden;
   background: var(--color-bg);
-  /* cursor: url('/Users/shreyavenkatraman/Side-Projects/Terminal-Website/my-react-app/public/pixil-frame-0.png'), auto; */
-
 }
 
 .welcome-banner {
   color: var(--color-pink);
   position: fixed;
-  font-family: 'Space Mono', monospace;
-  font-size: 14px;
+  font-family: "Cedarville Cursive", cursive;
+  font-size: 25px;
   inset: 0;
   display: flex;
   flex-direction: column;
   padding: 3rem;
   align-items: center;
+}
+
+.welcome-text {
+  color: var(--color-text);
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 18px;
+  margin-top: 1rem;
+  text-align: center;
+  max-width: 800px;
+}
+
+.modal-hobbies-title {
+  color: var(--color-pink);
+  font-family: "Cedarville Cursive", cursive;
+  font-size: 25px;
 }
 
 .app-root {

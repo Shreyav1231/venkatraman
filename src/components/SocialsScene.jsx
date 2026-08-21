@@ -35,6 +35,7 @@ function SocialsModel() {
   return (
     <primitive
       object={obj}
+      rotation={[Math.PI / 2, Math.PI, 0]}
       onClick={handleClick}
       onPointerOver={handlePointerOver}
       onPointerOut={handlePointerOut}
@@ -52,7 +53,7 @@ function AutoCamera() {
       const size   = box.getSize(new THREE.Vector3())
       const maxDim = Math.max(size.x, size.y, size.z)
       const dist   = maxDim * 1.0
-      camera.position.set(center.x, center.y + dist * 0.15, center.z + dist)
+      camera.position.set(center.x, center.y + dist * 0.45, center.z + dist)
       camera.lookAt(center)
       camera.updateProjectionMatrix()
     })
@@ -74,7 +75,7 @@ export default function SocialsScene() {
           <span style={{ color: '#50fa7b', fontFamily: 'monospace', fontSize: 14 }}>loading...</span>
         </Html>
       }>
-        <SocialsModel />
+          <SocialsModel />
         <AutoCamera />
       </Suspense>
 

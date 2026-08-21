@@ -19,7 +19,7 @@ export default function App() {
         <>
           <div className="welcome-banner">
             <h1>I am Shreya Venkatraman!</h1>
-            <p>As a kid, I was known for my inquisitiveness - opening random drawers, playing with objects, and asking questions endlessly. As an adult, I harness that inquisitiveness to explore new ideas and push the boundaries of what I think is possible. Today, I invite you to be inquisitive about my website. Poke around and see what you find!</p>
+            <p className="welcome-text">As a kid, I was known for my inquisitiveness - opening random drawers, playing with objects, and asking questions endlessly. As an adult, I harness that inquisitiveness to explore new ideas and push the boundaries of what I think is possible. Today, I invite you to be inquisitive about my website. Poke around and see what you find!</p>
           </div>
           <DeskScene
             onOpen={() => setShowTerminal(true)}

@@ -15,7 +15,7 @@ function BeachModel() {
     loader.setMaterials(materials)
   })
 
-  return <primitive object={obj} />
+  return <primitive object={obj} rotation={[0, Math.PI, 0]} />
 }
 
 function AutoCamera() {

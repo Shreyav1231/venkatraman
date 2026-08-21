@@ -33,10 +33,17 @@ function DesktopModel({ onOpen, onResumeOpen, onSocialsOpen, onHobbiesOpen }) {
   }
 
   const handlePointerOver = (e) => {
-    if (CLICKABLE.has(getClickedName(e))) document.body.style.cursor = 'pointer'
+    const name = getClickedName(e)
+    // show finger pointer specifically for phone parts and the resume
+    if (PHONE_OBJECTS.has(name) || name === RESUME_OBJECT) {
+      document.body.style.cursor = 'pointer'
+      return
+    }
+    // for other clickable elements, fall back to no inline override so CSS cursor applies
+    document.body.style.cursor = ''
   }
 
-  const handlePointerOut = () => { document.body.style.cursor = 'default' }
+  const handlePointerOut = () => { document.body.style.cursor = '' }
 
   return (
     <primitive
