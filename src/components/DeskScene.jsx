@@ -5,11 +5,15 @@ import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader.js'
 import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader.js'
 import * as THREE from 'three'
 
-const MONITOR_OBJECT = 'Cube'
-const RESUME_OBJECT  = 'Resume_Paper'
-const CLICKABLE      = new Set([MONITOR_OBJECT, RESUME_OBJECT])
+// The desk scene is the default view of the website, with 3D models of a desk, monitor, and phone
 
-function DesktopModel({ onOpen, onResumeOpen }) {
+const MONITOR_OBJECT  = 'Cube'
+const RESUME_OBJECT   = 'Resume_Paper'
+const PHONE_OBJECTS   = new Set(['основа_телефона', 'Трубка', 'диск', 'ограничитель_диска', 'провод'])
+const CAT_OBJECT      = 'Cone.001'
+const CLICKABLE       = new Set([MONITOR_OBJECT, RESUME_OBJECT, CAT_OBJECT, ...PHONE_OBJECTS])
+
+function DesktopModel({ onOpen, onResumeOpen, onSocialsOpen, onHobbiesOpen }) {
   const base = import.meta.env.BASE_URL
   const materials = useLoader(MTLLoader, `${base}3d-models/desktop_with_resume.mtl`)
   const obj = useLoader(OBJLoader, `${base}3d-models/desktop_with_resume.obj`, (loader) => {
@@ -22,8 +26,10 @@ function DesktopModel({ onOpen, onResumeOpen }) {
   const handleClick = (e) => {
     e.stopPropagation()
     const name = getClickedName(e)
-    if (name === MONITOR_OBJECT) onOpen()
-    if (name === RESUME_OBJECT)  onResumeOpen()
+    if (name === MONITOR_OBJECT)  onOpen()
+    if (name === RESUME_OBJECT)   onResumeOpen()
+    if (name === CAT_OBJECT)      onHobbiesOpen && onHobbiesOpen()
+    if (PHONE_OBJECTS.has(name))  onSocialsOpen()
   }
 
   const handlePointerOver = (e) => {
@@ -78,7 +84,7 @@ function Loader() {
   )
 }
 
-export default function Scene({ onOpen, onResumeOpen }) {
+export default function Scene({ onOpen, onResumeOpen, onSocialsOpen, onHobbiesOpen }) {
   return (
     <Canvas
       camera={{ position: [0, 2, 10], fov: 50 }}
@@ -90,7 +96,7 @@ export default function Scene({ onOpen, onResumeOpen }) {
       <directionalLight position={[0, 4, -8]}  intensity={0.35} />
 
       <Suspense fallback={<Loader />}>
-        <DesktopModel onOpen={onOpen} onResumeOpen={onResumeOpen} />
+        <DesktopModel onOpen={onOpen} onResumeOpen={onResumeOpen} onSocialsOpen={onSocialsOpen} onHobbiesOpen={onHobbiesOpen} />
         <AutoCamera />
         <ContactShadows
           position={[0, -2, 0]}

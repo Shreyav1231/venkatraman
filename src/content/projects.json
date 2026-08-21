@@ -60,15 +60,20 @@
   },
   {
     "id": "project-four",
-    "title": "Grade-Saver",
+    "title": "Grade Saver",
     "description": "A web extension that helps students discover opportunities for regrade requests on Gradescope.",
     "images": [
-      "/projects/project-four-1.png",
-      "/projects/project-four-2.png"
+      "project-images/grade-saver-logo.jpg"
+    ],
+    "links": [
+      "https://github.com/Shrish-M/Grade-Saver",
+      "",
+      "https://devpost.com/software/grade-saver-8wjofd"
     ],
     "story": [
-      "First paragraph — what the project is and why you built it.",
-      "Second paragraph — interesting technical challenges or decisions."
+      "Catapult Hacks is Purdue's machine learning and AI hackathon, and I was thrilled to be a part of it in the Spring of 2025. Coincidentally, all members of my team were teaching assistants - which was really cool. While discussing ideas for the hackathon, we realized that many students were missing out on opportunities to request regrades on ~Gradescope~ either because they didn't know there were any opportunities or because a TA missed grading them accurately.  We decided to create a web extension that would help students discover these opportunities and make the process easier.",
+      "Grade Saver is a Google Chrome extension that goes through your answers and the rubric, and looks for opportunities to request regrades. We used a number of tools to build this extension, including web scraping using Playwright and BeautifulSoup. Image processing was done using OpenCV. We used Purdue's GenAI studio to prompt for a regrade request.",
+      "Personally, this was my first time ever working with image processing and AI models, and I had a lot of fun learning about them from my friends. We faced many challenges during the hackathon, the biggest being privacy concerns (FERPA laws) and the fact that Gradescope is a closed-source platform. We had to be careful about how we scraped data, and we also had to make sure that our extension was secure and didn't violate any laws. We created a fake Gradescope course to test our extension, and as such it was not tested on real student data. But that is something we would like to dig deeper into in the future. With AI, we want to be careful about how we use it, and where we store the data."
     ]
   }
 ]

@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import projects from '../content/projects.json'
 
+// This component renders a modal overlay that displays information on projects and about sections.
+
 function ProjectsGrid() {
   const [selected, setSelected] = useState(null)
 
@@ -69,6 +71,25 @@ const SECTIONS = {
   projects: {
     title: 'projects',
     content: <ProjectsGrid />,
+  },
+  hobbies: {
+    title: 'hobbies',
+    content: (
+      <div className="modal-hobbies">
+        <h1>I love DOING.</h1>
+        <p>My hobbies include, but are not limited to:</p>
+        <ul>
+          <li>MUSIC - creating and listening</li>
+          <li>FOOD - cooking and eating</li>
+          <li>BEING OUTDOORS - from touching grass to chasing sunsets</li>
+          <li>READING - exploring new worlds through books</li>
+          <li>ADVENTURING - from grocery stores to the wilderness</li>
+        </ul>
+        <br></br>
+        <p>"Isn’t it splendid to think of all the things there are to find out about? It just makes me feel glad to be alive—it’s such an interesting world. It wouldn’t be half so interesting if we knew all about everything, would it? There’d be no scope for imagination then, would there?"</p>
+        <p>— L.M. Montgomery, Anne of Green Gables</p>
+      </div>
+    ),
   },
 }
 

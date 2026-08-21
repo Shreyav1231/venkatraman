@@ -5,10 +5,13 @@ import GridView from './GridView'
 import Prompt from './Prompt'
 import Modal from './Modal'
 
+// This component renders the terminal interface. 
+
 export default function Terminal() {
   const { cwd, history, run, modal, closeModal } = useShell()
   const inputRef = useRef(null)
   const bottomRef = useRef(null)
+  // State to manage the current input value in the terminal
   const [inputValue, setInputValue] = useState('')
 
   useEffect(() => {
@@ -17,6 +20,7 @@ export default function Terminal() {
 
   const focusInput = () => inputRef.current?.focus()
 
+  // Handle the Enter key to run the command and clear the input
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
       run(inputValue)

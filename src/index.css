@@ -404,3 +404,58 @@ html, body, #root {
   padding: 0.5rem;
   margin: 20.4rem 0 0 0;
 }
+
+/* ── Socials 3D overlay ── */
+.socials-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 60;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  animation: fadeIn 0.15s ease;
+}
+
+.socials-window {
+  position: relative;
+  width: min(540px, 90vw);
+  height: 280px;
+  background: #1a1a2e;
+  border: 1px solid rgba(242, 0, 255, 0.35);
+  border-radius: 12px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.socials-close {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.8rem;
+  z-index: 10;
+  background: none;
+  border: none;
+  color: #6272a4;
+  font-size: 1rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0.2rem 0.4rem;
+}
+
+.socials-close:hover { color: var(--color-error); }
+
+.socials-hint {
+  position: absolute;
+  bottom: 0.6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  color: #6272a4;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.75rem;
+  pointer-events: none;
+  white-space: nowrap;
+}

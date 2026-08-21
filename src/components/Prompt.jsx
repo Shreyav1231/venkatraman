@@ -1,3 +1,5 @@
+// This component renders the command prompt in the terminal
+
 export default function Prompt({ cwd, input }) {
   return (
     <>

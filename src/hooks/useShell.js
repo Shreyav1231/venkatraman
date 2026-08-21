@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { runCommand } from '../filesystem/commands/index.js'
 import tree from '../filesystem/index.js'
 
+// This custom hook manages the state for the terminal
+
 export default function useShell() {
   const [cwd, setCwd] = useState('/')
   const [history, setHistory] = useState([])

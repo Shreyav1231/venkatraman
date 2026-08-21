@@ -5,6 +5,8 @@ import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader.js'
 import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader.js'
 import * as THREE from 'three'
 
+// This component renders a 3D beach scene that is visible upon clicking the "Resume" button in the DeskScene.
+
 function BeachModel() {
   const base = import.meta.env.BASE_URL
   const materials = useLoader(MTLLoader, `${base}3d-models/BeachTutorial.mtl`)

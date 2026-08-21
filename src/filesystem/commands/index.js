@@ -5,6 +5,8 @@ import open from './open.js'
 
 const commands = { ls, cd, pwd, open }
 
+// This function takes the raw input string received in Terminal.jsx, and parses it into command and args
+
 export function runCommand(input, cwd, tree) {
   // split input into command and args
   const [cmd, ...args] = input.trim().split(/\s+/)
@@ -12,7 +14,7 @@ export function runCommand(input, cwd, tree) {
   if (!cmd) return { output: null }   // empty enter, do nothing
 
   if (cmd === 'clear') {
-    // Special case — handled in useShell directly, signal it here
+    // Special case — handled in useShell directly
     return { clear: true }
   }
 
