@@ -70,7 +70,8 @@ function AutoCamera() {
       const maxDim = Math.max(size.x, size.y, size.z)
 
       // Position camera front-right at ~desk-top height, looking at the center
-      const dist = maxDim * 1.4
+      const mobileFit = camera.aspect < 0.8 ? 1.3 : 1
+      const dist = maxDim * 1.15 * mobileFit
       camera.position.set(center.x + dist * 0.4, center.y + dist * 0.15, center.z + dist)
       camera.lookAt(center)
       camera.updateProjectionMatrix()

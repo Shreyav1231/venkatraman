@@ -11,7 +11,22 @@ export default function App() {
   const [showTerminal, setShowTerminal] = useState(false)
   const [showSocials,  setShowSocials]  = useState(false)
   const [showHobbies,  setShowHobbies]  = useState(false)
+  const [modalSection, setModalSection] = useState(null)
   const [view, setView] = useState('desk') // 'desk' | 'beach'
+
+  const openSection = (section) => {
+    setShowHobbies(false)
+    setShowSocials(false)
+    setModalSection(section)
+  }
+
+  const quickLinks = [
+    { label: 'about', onClick: () => openSection('about') },
+    { label: 'projects', onClick: () => openSection('projects') },
+    { label: 'hobbies', onClick: () => openSection('hobbies') },
+    { label: 'contact', onClick: () => setShowSocials(true) },
+    { label: 'resume', onClick: () => setView('beach') },
+  ]
 
   return (
     <div className="app-root">
@@ -21,6 +36,14 @@ export default function App() {
             <h1>I am Shreya Venkatraman</h1>
             <p className="welcome-text">As a kid, I was known for my inquisitiveness - opening random drawers, playing pretend with objects, and asking questions endlessly. As an adult, I harness that inquisitiveness to explore new ideas and push the boundaries of what I think is possible. Today, I invite you to be inquisitive about my website. Poke around and see what you find!</p>
           </div>
+          <nav className="quick-nav" aria-label="Quick access">
+            <span className="quick-nav-label">find your way</span>
+            {quickLinks.map(({ label, onClick }) => (
+              <button key={label} className="quick-nav-link" onClick={onClick}>
+                {label}
+              </button>
+            ))}
+          </nav>
           <DeskScene
             onOpen={() => setShowTerminal(true)}
             onResumeOpen={() => setView('beach')}
@@ -60,6 +83,9 @@ export default function App() {
           {showHobbies && (
             <Modal section="hobbies" onClose={() => setShowHobbies(false)} />
           )}
+          {modalSection && (
+            <Modal section={modalSection} onClose={() => setModalSection(null)} />
+          )}
         </>
       )}
 
@@ -72,6 +98,14 @@ export default function App() {
             </div>
           </div>
           <button className="beach-back" onClick={() => setView('desk')}>← back</button>
+          <a
+            className="resume-download"
+            href={`${import.meta.env.BASE_URL}assets/RESUME.png`}
+            download="Shreya-Venkatraman-Resume.png"
+          >
+            ↓ download
+          </a>
+          <button className="resume-exit" onClick={() => setView('desk')} aria-label="Exit resume">✕ exit</button>
         </>
       )}
     </div>
